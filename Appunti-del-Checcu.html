@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title>Compiti</title>
+        <link rel="stylesheet" href="Appunti-del-Ale.css">
+    </head>
+    <body>
+        <!-- Visualizzatore PDF -->
+        <embed src="file-Appunti-del-Ale/Filo-Storia-E-Ita 3.pdf" type="application/pdf">
+
+        <!-- Barra dei pulsanti -->
+        <div class="button-bar">
+            <!-- Pulsante per la condivisione -->
+            <button onclick="sharePDF()">Condividi</button>
+        </div>
+
+        <script>
+            // Funzione per condividere il PDF
+            function sharePDF() {
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Condividi PDF',
+                        text: 'Ecco il file PDF che voglio condividere con te!',
+                        url: 'file-Appunti-del-Ale/Filo-Storia-E-Ita 3.pdf' // Percorso del file
+                    }).catch(err => console.error('Condivisione fallita:', err));
+                } else {
+                    alert('La condivisione non è supportata su questo dispositivo.');
+                }
+            }
+        </script>
+    </body>
+</html>
