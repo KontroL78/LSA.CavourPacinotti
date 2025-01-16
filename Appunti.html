@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Appunti</title>
+    <link rel="stylesheet" href="appunti.css">
+</head>
+<body>
+    <h1>Appunti</h1>
+
+    <!-- Container per l'accordion -->
+    <div class="accordion">
+        <!-- Sezione 1: Appunti del Ale -->
+        <div class="accordion-item">
+            <button class="accordion-button">Appunti del Ale</button>
+            <div class="accordion-content">
+                <a href="file-Appunti-del-Ale/Scienze.pdf" target="_blank">Scienze</a>
+                <a href="Appunti/Appunti-del-Ale.html" target="_blank">Italiano</a>
+                <a href="file-Appunti-del-Ale/Matematica.pdf" target="_blank">Matematica</a>
+            </div>
+        </div>
+
+        <!-- Sezione 2: Appunti del Checcu -->
+        <div class="accordion-item">
+            <button class="accordion-button">Appunti del Checcu</button>
+            <div class="accordion-content">
+                <a href="file-Appunti-del-Checcu/Fisica.pdf" target="_blank">Fisica</a>
+                <a href="file-Appunti-del-Checcu/Storia.pdf" target="_blank">Storia</a>
+                <a href="file-Appunti-del-Checcu/Inglese.pdf" target="_blank">Inglese</a>
+            </div>
+        </div>
+
+        <!-- Sezione 3: Appunti del Bomber -->
+        <div class="accordion-item">
+            <button class="accordion-button">Appunti del Bomber</button>
+            <div class="accordion-content">
+                <a href="file-Appunti-del-Bomber/Chimica.pdf" target="_blank">Chimica</a>
+                <a href="file-Appunti-del-Bomber/Arte.pdf" target="_blank">Arte</a>
+                <a href="file-Appunti-del-Bomber/Geografia.pdf" target="_blank">Geografia</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Funzione per attivare/disattivare l'accordion
+        document.querySelectorAll('.accordion-button').forEach(button => {
+            button.addEventListener('click', () => {
+                const content = button.nextElementSibling;
+
+                // Mostra o nasconde il contenuto
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    document.querySelectorAll('.accordion-content').forEach(item => {
+                        item.style.maxHeight = null; // Nasconde tutti gli altri
+                    });
+                    content.style.maxHeight = content.scrollHeight + "px"; // Mostra il selezionato
+                }
+            });
+        });
+    </script>
+</body>
+</html>

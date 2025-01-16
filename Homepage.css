@@ -1,0 +1,48 @@
+body {
+    background-color: slategrey;
+    color: honeydew;
+    text-align: center;
+}
+
+body h1 {
+    font-size: 2cm;
+}
+
+.giù {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.giù div {
+    margin-right: 25px;
+}
+
+.giù a {
+    color: honeydew;
+    text-decoration: none;
+    font-size: 1.5em;
+    padding: 10px 20px;
+    border-radius: 15px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    background-color: #686878;
+}
+
+/* Effetto hover */
+.giù a:hover {
+    background-color: #585868;
+    transform: translateY(-2.5px) scale(0.90);
+}
+
+/* Media query per schermi piccoli (meno di 600px) */
+@media (max-width: 600px) {
+    .giù {
+        flex-direction: column;  /* Cambia la direzione del flex per impilare i pulsanti */
+    }
+    .giù div {
+        margin-bottom: 15px;  /* Aggiungi margine tra i pulsanti */
+        margin-right: 0;      /* Rimuovi il margine destro */
+    }
+}

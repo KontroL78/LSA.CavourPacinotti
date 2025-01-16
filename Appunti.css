@@ -1,0 +1,94 @@
+/* Stile generale */
+body {
+    background-color: slategrey;
+    color: honeydew;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Accordion container */
+.accordion {
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Singola sezione dell'accordion */
+.accordion-item {
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #686878;
+}
+
+/* Bottone dell'accordion */
+.accordion-button {
+    background-color: #686878;
+    color: honeydew;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.5em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accordion-button:hover {
+    background-color: #585868;
+    transform: translateY(-2px);
+}
+
+/* Contenuto dell'accordion */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background-color: #585868;
+    padding: 0 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Link all'interno dell'accordion */
+.accordion-content a {
+    display: block;
+    color: honeydew;
+    text-decoration: none;
+    font-size: 1.2em;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #686878;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.accordion-content a:hover {
+    background-color: #484858;
+    transform: translateY(-2px);
+    color: #dcdcdc;
+}
+
+/* Aggiunge una piccola animazione e icona */
+.accordion-button::after {
+    font-size: 1.5em;
+    color: honeydew;
+    transition: transform 0.3s ease;
+}
+
+.accordion-button[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
